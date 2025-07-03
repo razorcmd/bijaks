@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio [Nama Anda]</title>
+    <title>Arif Bijaksana</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
@@ -20,7 +20,7 @@
 <body class="bg-gray-900 text-white antialiased">
     <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-orange-500 hover:text-orange-400">Wolfpixel</a>
+            <a href="#" class="text-2xl font-bold text-orange-500 hover:text-orange-400">Arif Bijaksana</a>
             <div class="space-x-6 hidden md:flex"> <a href="#" class="hover:text-orange-400 transition duration-300">About Us</a>
                 <a href="#" class="hover:text-orange-400 transition duration-300">Process</a>
                 <a href="#" class="hover:text-orange-400 transition duration-300">Services</a>
@@ -37,14 +37,14 @@
     <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://source.unsplash.com/random/1600x900?abstract-design');">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 p-8 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Wolfpixel - Where <span class="text-orange-500">Vision</span> Meets Reality.</h1>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Arif Bijaksana - <span class="text-orange-500">Mahasiswa</span> Pembangunan Ekonomi Kewilayahan UGM.</h1>
             <p class="text-xl md:text-2xl leading-relaxed mb-8">
-                We craft elegant and striking designs that deeply connect with your audience, creating memorable digital experiences.
+                Tinggal di Sleman, Yogyakarta. Saya fokus pada analisis dan pengembangan ekonomi wilayah, dengan minat mendalam pada [spesifik minat Anda, misal: data science untuk pembangunan, kebijakan publik, dll.].
             </p>
             <div class="flex flex-wrap justify-center items-center gap-8 mb-10 text-xl md:text-3xl font-semibold">
-                <div>1.7M+ <span class="block text-base font-normal">Project Views</span></div>
-                <div>150+ <span class="block text-base font-normal">Completed Project</span></div>
-                <div>60+ <span class="block text-base font-normal">Happy Clients</span></div>
+                <div>2 Tahun <span class="block text-base font-normal">Pengalaman</span></div>
+                <div>40+ <span class="block text-base font-normal">Proyek Selesai</span></div>
+                <div>11+ <span class="block text-base font-normal">Mata Kuliah Relevan</span></div>
             </div>
             <button class="bg-orange-500 text-white px-8 py-3 rounded-full text-xl hover:bg-orange-600 transition duration-300">Explore Our Work</button>
         </div>
@@ -57,26 +57,26 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://source.unsplash.com/random/800x600?mobile-app" alt="Mobile App Project" class="w-full h-64 object-cover">
+                    <img src="{{ url_for('static', filename='images/IMG_0680.JPG') }}" alt="Foto Profil Arif" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mobile App</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">UI/UX</span>
+                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mam</span>
+                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Ayam Bakar</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">ZenPay | Fintech Mobile App UI/UX Design</h3>
-                        <p class="text-gray-400 text-sm">Deskripsi singkat proyek Fintech Anda.</p>
+                        <h3 class="text-xl font-semibold mb-2">AyamFavorit. | Kenangan Dia</h3>
+                        <p class="text-gray-400 text-sm">Dulu dia bilang kalo makanan favoritnya sih prasojo, tapi ganti itu pas itu, apa ya namanya lupa. Ayam Bakar Manukan?.</p>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://source.unsplash.com/random/800x600?branding-design" alt="Branding Project" class="w-full h-64 object-cover">
+                    <img src="{{ url_for('static', filename='images/IMG_0742.JPG') }}" alt="Foto Profil Arif Juga" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Brand Identity</span>
-                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Packaging</span>
+                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mam</span>
+                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Gejayan</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Coffee shop brand identity</h3>
-                        <p class="text-gray-400 text-sm">Deskripsi singkat proyek Branding Anda.</p>
+                        <h3 class="text-xl font-semibold mb-2">RC RC RC!</h3>
+                        <p class="text-gray-400 text-sm">Tim Rocket Chicken Broow!.</p>
                     </div>
                 </div>
 
@@ -84,15 +84,15 @@
         </div>
     </section>
 
-    <section id="about-us" class="py-16 bg-gray-800 text-white">
+    <section id="about-me" class="py-16 bg-gray-800 text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">About Us</h2>
-            <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
+            <p class="text-lg">Halo! Saya Arif Bijaksana, mahasiswa Pembangunan Ekonomi Kewilayahan di Universitas Gadjah Mada (UGM), berdomisili di Sleman, Yogyakarta. Saya memiliki ketertarikan yang kuat pada [minat spesifik Anda, misal: analisis kebijakan daerah, data spasial, pengembangan UMKM]. Tujuan saya adalah mengaplikasikan ilmu ekonomi untuk memberikan dampak positif pada pembangunan wilayah.</p>
         </div>
     </section>
 
     <footer class="bg-gray-950 text-gray-400 p-8 text-center text-sm">
-        <p>&copy; 2025 [Nama Anda]. All Rights Reserved.</p>
+        <p>&copy; 2025 Arif Bijaksana. All Rights Reserved.</p>
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
