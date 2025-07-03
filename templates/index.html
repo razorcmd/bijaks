@@ -9,50 +9,118 @@
     </head>
 <body class="bg-gray-900 text-white antialiased">
     <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
-    <nav class="container mx-auto flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold text-orange-500 hover:text-orange-400">Arif Bijaksana</a>
-        <div class="space-x-6 hidden md:flex nav-links"> <a href="#about-me" class="hover:text-orange-400 transition duration-300">About Me</a> <a href="#process" class="hover:text-orange-400 transition duration-300">Process</a>
-            <a href="#services" class="hover:text-orange-400 transition duration-300">Services</a>
-            <a href="#projects" class="hover:text-orange-400 transition duration-300">Works</a>
-            <a href="#testimonials" class="hover:text-orange-400 transition duration-300">Testimonials</a>
-            <a href="#faq" class="hover:text-orange-400 transition duration-300">FAQ</a>
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-orange-500 hover:text-orange-400">Arif Bijaksana</a>
+            <div class="space-x-6 hidden md:flex nav-links">
+                <a href="#about-me" class="hover:text-orange-400 transition duration-300">About Me</a>
+                <a href="#process" class="hover:text-orange-400 transition duration-300">Process</a>
+                <a href="#services" class="hover:text-orange-400 transition duration-300">Services</a>
+                <a href="#projects" class="hover:text-orange-400 transition duration-300">Works</a>
+                <a href="#testimonials" class="hover:text-orange-400 transition duration-300">Testimonials</a>
+                <a href="#faq" class="hover:text-orange-400 transition duration-300">FAQ</a>
+            </div>
+            <a href="#" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 hidden md:block">Start Your Project</a>
+            <button class="md:hidden text-white text-2xl mobile-menu-button focus:outline-none">☰</button>
+        </nav>
+        <div class="md:hidden hidden flex-col items-center nav-links space-y-4 py-4 mt-2 bg-gray-800 rounded-b-lg shadow-lg">
+             <a href="#about-me" class="block hover:text-orange-400 transition duration-300">About Me</a>
+             <a href="#process" class="block hover:text-orange-400 transition duration-300">Process</a>
+             <a href="#services" class="block hover:text-orange-400 transition duration-300">Services</a>
+             <a href="#projects" class="block hover:text-orange-400 transition duration-300">Works</a>
+             <a href="#testimonials" class="block hover:text-orange-400 transition duration-300">Testimonials</a>
+             <a href="#faq" class="block hover:text-orange-400 transition duration-300">FAQ</a>
+             <a href="#" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 w-max">Start Your Project</a>
         </div>
-        <a href="#" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 hidden md:block">Start Your Project</a>
-        <button class="md:hidden text-white text-2xl mobile-menu-button focus:outline-none">☰</button> </nav>
-    <div class="md:hidden hidden flex-col items-center nav-links space-y-4 py-4 mt-2 bg-gray-800 rounded-b-lg shadow-lg"> <a href="#about-me" class="block hover:text-orange-400 transition duration-300">About Me</a>
-         <a href="#process" class="block hover:text-orange-400 transition duration-300">Process</a>
-         <a href="#services" class="block hover:text-orange-400 transition duration-300">Services</a>
-         <a href="#projects" class="block hover:text-orange-400 transition duration-300">Works</a>
-         <a href="#testimonials" class="block hover:text-orange-400 transition duration-300">Testimonials</a>
-         <a href="#faq" class="block hover:text-orange-400 transition duration-300">FAQ</a>
-         <a href="#" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 w-max">Start Your Project</a>
-    </div>
-</header>
+    </header>
 
-    <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://source.unsplash.com/random/1600x900?abstract-design');">
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 p-8 max-w-4xl mx-auto">
             <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Arif Bijaksana - <span class="text-orange-500">Mahasiswa</span> Pembangunan Ekonomi Kewilayahan UGM.</h1>
             <p class="text-xl md:text-2xl leading-relaxed mb-8">
-                Tinggal di Sleman, Yogyakarta. Saya fokus pada analisis dan pengembangan ekonomi wilayah, dengan minat mendalam pada [spesifik minat Anda, misal: data science untuk pembangunan, kebijakan publik, dll.].
+                Berbasis di Sleman, Yogyakarta. Saya fokus pada analisis dan pengembangan ekonomi wilayah, dengan minat mendalam pada [minat spesifik Anda, misal: data science untuk pembangunan, kebijakan publik, dll.].
             </p>
             <div class="flex flex-wrap justify-center items-center gap-8 mb-10 text-xl md:text-3xl font-semibold">
                 <div>2 Tahun <span class="block text-base font-normal">Pengalaman</span></div>
                 <div>40+ <span class="block text-base font-normal">Proyek Selesai</span></div>
                 <div>11+ <span class="block text-base font-normal">Mata Kuliah Relevan</span></div>
             </div>
-            <button class="bg-orange-500 text-white px-8 py-3 rounded-full text-xl hover:bg-orange-600 transition duration-300">Explore Our Work</button>
+            <button class="bg-orange-500 text-white px-8 py-3 rounded-full text-xl hover:bg-orange-600 transition duration-300">Explore My Work</button>
         </div>
     </section>
 
-    <section id="works" class="py-16 bg-gray-900 text-white">
+    <section id="process" class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-orange-500 text-lg mb-2">✦ Process</p>
+            <h2 class="text-4xl font-bold mb-12">From concept to completion</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <span class="text-orange-500 text-3xl font-bold mr-4">01</span>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Submit your project brief</h3>
+                            <p class="text-gray-300">Begin by submitting your project brief, detailing your vision and goals. Our team will carefully review your requirements to ensure we fully understand your needs</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-orange-500 text-3xl font-bold mr-4">02</span>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Design process</h3>
+                            <p class="text-gray-300">Our design team will go over your project brief and start working on your designs based and throughout the process</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <span class="text-orange-500 text-3xl font-bold mr-4">03</span>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Finalization and delivery</h3>
+                            <p class="text-gray-300">Once the design is perfected, we will finalize every element and deliver the complete project to you. We ensure every detail meets your expectations before the final handoff</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-orange-500 text-3xl font-bold mr-4">04</span>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Ongoing support</h3>
+                            <p class="text-gray-300">After delivery, we provide ongoing support to help you maintain and adapt your project. We're here to ensure your long-term success and address any future needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-orange-500 text-lg mb-2">✦ Services</p>
+            <h2 class="text-4xl font-bold mb-12">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <div class="text-5xl text-orange-500 mb-4">💡</div> <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">We Craft Seamless, Simple, Engaging, User-Friendly UI/UX Design for Conversions</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <div class="text-5xl text-orange-500 mb-4">💻</div>
+                    <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Emphasizes the functional aspect of web design to facilitate user experience and profit business outcomes.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <div class="text-5xl text-orange-500 mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-2">Branding</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">All-in-One Branding in one place. Our Branding that elevate your Business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-gray-900 text-white">
         <div class="container mx-auto px-6 text-center">
             <p class="text-orange-500 text-lg mb-2">✦ Works</p>
-            <h2 class="text-4xl font-bold mb-12">Collection of our finest works</h2>
+            <h2 class="text-4xl font-bold mb-12">Collection of my finest works</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="{{ url_for('static', filename='images/IMG_0680.JPG') }}" alt="Foto Profil Arif" class="w-full h-64 object-cover">
+                    <img src="{{ url_for('static', filename='images/IMG_0680.JPG') }}" alt="Mobile App Project" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mam</span>
@@ -62,9 +130,8 @@
                         <p class="text-gray-400 text-sm">Dulu dia bilang kalo makanan favoritnya sih prasojo, tapi ganti itu pas itu, apa ya namanya lupa. Ayam Bakar Manukan?.</p>
                     </div>
                 </div>
-
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="{{ url_for('static', filename='images/IMG_0742.JPG') }}" alt="Foto Profil Arif Juga" class="w-full h-64 object-cover">
+                    <img src="{{ url_for('static', filename='images/IMG_0742.JPG') }}" alt="Branding Project" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mam</span>
@@ -74,7 +141,72 @@
                         <p class="text-gray-400 text-sm">Tim Rocket Chicken Broow!.</p>
                     </div>
                 </div>
+                </div>
+        </div>
+    </section>
 
+    <section id="testimonials" class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-orange-500 text-lg mb-2">✦ Testimonials</p>
+            <h2 class="text-4xl font-bold mb-12">What our valued clients have to say about their experience working with us</h2>
+            <div class="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+                <div class="flex-shrink-0 w-80 bg-gray-900 p-6 rounded-lg shadow-md">
+                    <p class="text-lg italic mb-4">"Kerja sama yang luar biasa! Tim mereka sangat profesional dan responsif. Sangat merekomendasikan."</p>
+                    <div class="flex items-center justify-center mt-4">
+                        <img src="{{ url_for('static', filename='images/person1.jpg') }}" alt="Client 1" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Kevin Karuki</h4>
+                            <p class="text-sm text-gray-400">Founder of 10X BEAST</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-gray-900 p-6 rounded-lg shadow-md">
+                    <p class="text-lg italic mb-4">"Hasilnya melebihi ekspektasi kami. Desain yang inovatif dan komunikasi yang jelas."</p>
+                    <div class="flex items-center justify-center mt-4">
+                        <img src="{{ url_for('static', filename='images/person2.jpg') }}" alt="Client 2" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Rihab Lajmi</h4>
+                            <p class="text-sm text-gray-400">CEO of Fiang</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-gray-900 p-6 rounded-lg shadow-md">
+                    <p class="text-lg italic mb-4">"Senang bekerja dengan tim Wolfpixel. Mereka sangat responsif dan memberikan solusi kreatif."</p>
+                    <div class="flex items-center justify-center mt-4">
+                        <img src="{{ url_for('static', filename='images/person3.jpg') }}" alt="Client 3" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sayandeep Das</h4>
+                            <p class="text-sm text-gray-400">Co-Founder of Techscholars</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-orange-500 text-lg mb-2">✦ FAQ</p>
+            <h2 class="text-4xl font-bold mb-12">Frequently asked questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4 text-left">
+                <div class="bg-gray-800 p-5 rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center text-xl font-semibold faq-toggle">
+                        How long does a project take at Wolfpixel?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content mt-3 text-gray-300 hidden">
+                        <p>The timeline varies greatly depending on the project's complexity and scope. We'll provide an estimated timeline after reviewing your project brief.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center text-xl font-semibold faq-toggle">
+                        What makes Wolfpixel different?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content mt-3 text-gray-300 hidden">
+                        <p>Our unique blend of creative design, cutting-edge technology, and client-centric approach ensures exceptional digital experiences tailored to your needs.</p>
+                    </div>
+                </div>
                 </div>
         </div>
     </section>
