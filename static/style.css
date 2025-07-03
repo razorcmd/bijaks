@@ -1,0 +1,51 @@
+/* Import Google Fonts di sini */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
+/* Custom CSS Anda */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom scrollbar untuk testimonial (opsional, tidak didukung semua browser) */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Gaya untuk FAQ accordion */
+.faq-toggle {
+    cursor: pointer;
+}
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+.faq-toggle.active .faq-icon {
+    transform: rotate(45deg); /* Mengubah '+' menjadi 'x' atau '-' */
+}
+.faq-content {
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+.faq-content.open {
+    max-height: 500px; /* Nilai yang cukup besar agar tidak terpotong */
+    opacity: 1;
+}
+
+<style>
+        /* Custom CSS untuk Wolfpixel agency, jika ada */
+        /* Mengatur font default untuk body */
+        body {
+            font-family: 'Open Sans', sans-serif; /* Ganti dengan font yang Anda suka */
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif; /* Ganti dengan font heading yang Anda suka */
+        }
+    </style>

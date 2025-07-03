@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arif Bijaksana</title>
+    <title>Portofolio Arif Bijaksana</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-    <style>
-        /* Custom CSS untuk Wolfpixel agency, jika ada */
-        /* Mengatur font default untuk body */
-        body {
-            font-family: 'Open Sans', sans-serif; /* Ganti dengan font yang Anda suka */
-        }
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif; /* Ganti dengan font heading yang Anda suka */
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
 <body class="bg-gray-900 text-white antialiased">
     <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto flex justify-between items-center">
@@ -57,7 +47,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="{{ url_for('static', filename='images/IMG_0680.JPG') }}" alt="Foto Profil Arif" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <img src="{{ url_for('static', filename='images/IMG_0680.JPG') }}" alt="Foto Profil Arif" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mam</span>
@@ -69,7 +59,7 @@
                 </div>
 
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="{{ url_for('static', filename='images/IMG_0742.JPG') }}" alt="Foto Profil Arif Juga" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <img src="{{ url_for('static', filename='images/IMG_0742.JPG') }}" alt="Foto Profil Arif Juga" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex flex-wrap gap-2 mb-3">
                             <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">Mam</span>
