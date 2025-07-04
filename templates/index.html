@@ -115,27 +115,26 @@
 
     <section id="projects" class="py-16 bg-gray-900 text-white">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-orange-500 text-lg mb-2">✦ Works</p>
-            <h2 class="text-4xl font-bold mb-12">Collection of my finest works</h2>
+         <p class="text-orange-500 text-lg mb-2">✦ Works</p>
+          <h2 class="text-4xl font-bold mb-12">Collection of my finest works</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {% for project in projects_data %}
-    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="Gambar Proyek {{ project.title }}" class="w-full h-64 object-cover">
-        <div class="p-6">
-            <div class="flex flex-wrap gap-2 mb-3">
-                {% for tag in project.tags %}
-                <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">{{ tag }}</span>
-                {% endfor %}
-            </div>
-            <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
-            <p class="text-gray-400 text-sm">{{ project.description }}</p>
-            <a href="{{ project.link }}" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">Lihat Proyek</a>
-        </div>
-    </div>
-    {% endfor %}
-</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+             {% for project in projects_data %}
+             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                   <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="Gambar Proyek {{ project.title }}" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                       <div class="flex flex-wrap gap-2 mb-3">
+                            {% for tag in project.tags %}
+                            <span class="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+                      <p class="text-gray-400 text-sm">{{ project.description }}</p>
+                      <a href="{{ project.link }}" target="_blank" class="text-blue-600 hover:underline mt-2 inline-block">Lihat Proyek</a>
+                    </div>
+              </div>
+            {% endfor %}
+          </div>
         </div>
     </section>
 

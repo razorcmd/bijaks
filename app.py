@@ -33,7 +33,3 @@ def home():
     return render_template('index.html', 
                            projects_data=projects_data, 
                            hero_bg_url=hero_bg_url)
-
-# Baris ini DIKOMENTARI atau DIHAPUS karena Render/Gunicorn akan menjalankannya
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=5000)
