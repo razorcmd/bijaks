@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, url_for # Tambahkan url_for di sini
 import json # Import pustaka json
 import os # Import pustaka os untuk path file
 
