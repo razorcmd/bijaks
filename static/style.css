@@ -38,14 +38,3 @@ h1, h2, h3 {
     max-height: 500px; /* Nilai yang cukup besar agar tidak terpotong */
     opacity: 1;
 }
-
-<style>
-        /* Custom CSS untuk Wolfpixel agency, jika ada */
-        /* Mengatur font default untuk body */
-        body {
-            font-family: 'Open Sans', sans-serif; /* Ganti dengan font yang Anda suka */
-        }
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif; /* Ganti dengan font heading yang Anda suka */
-        }
-    </style>
