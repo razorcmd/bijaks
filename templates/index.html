@@ -36,7 +36,7 @@
     <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('{{ hero_bg_url }}');">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 p-8 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Arif Bijaksana - <span class="text-orange-500">Mahasiswa</span> Pembangunan Ekonomi Kewilayahan UGM.</h1>
+            <h1 class="text-2xl md:text-2xl font-bold leading-tight mb-4">Arif Bijaksana - <span class="text-orange-500">Mahasiswa</span> Pembangunan Ekonomi Kewilayahan UGM.</h1>
             <p class="text-xl md:text-2xl leading-relaxed mb-8">
                 Berbasis di Sleman, Yogyakarta. Saya fokus pada analisis dan pengembangan ekonomi wilayah, dengan minat mendalam pada [minat spesifik Anda, misal: data science untuk pembangunan, kebijakan publik, dll.].
             </p>
@@ -218,5 +218,43 @@
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+    // Skrip sederhana untuk live reload (khusus pengembangan)
+    // Periksa perubahan file setiap beberapa detik
+    const lastModified = {};
+    function checkForChanges() {
+        const filesToCheck = [
+            '{{ url_for('static', filename='style.css') }}',
+            '{{ url_for('static', filename='script.js') }}',
+            '{{ url_for('data', filename='projects.json') }}', // Asumsi data/projects.json
+            // Tambahkan file lain yang sering Anda edit di sini
+        ];
+
+        let changesDetected = false;
+        let checksCompleted = 0;
+
+        filesToCheck.forEach(url => {
+            fetch(url, { method: 'HEAD' })
+                .then(response => {
+                    const newModified = response.headers.get('Last-Modified') || response.headers.get('ETag');
+                    if (lastModified[url] && lastModified[url] !== newModified) {
+                        changesDetected = true;
+                    }
+                    lastModified[url] = newModified;
+                })
+                .catch(error => console.error('Error checking for file changes:', error))
+                .finally(() => {
+                    checksCompleted++;
+                    if (checksCompleted === filesToCheck.length && changesDetected) {
+                        console.log('Changes detected! Reloading page...');
+                        location.reload();
+                    }
+                });
+        });
+    }
+
+    // Jalankan pengecekan setiap 1-2 detik
+    setInterval(checkForChanges, 1500); // Cek setiap 1.5 detik
+</script>
 </body>
 </html>
