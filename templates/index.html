@@ -35,10 +35,10 @@
     
     <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('{{ hero_bg_url }}');">
         <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 p-8 max-w-4xl mx-auto">
-            <h1 class="text-2xl md:text-2xl font-bold leading-tight mb-4">Arif Bijaksana - <span class="text-orange-500">Mahasiswa</span> Pembangunan Ekonomi Kewilayahan UGM.</h1>
+        <div class="relative z-10 p-8 container mx-auto px-6"> 
+        <h1 class="text-2xl md:text-2xl font-bold leading-tight mb-4">Arif Bijaksana - <span class="text-orange-500">Mahasiswa</span> Pembangunan Ekonomi Kewilayahan UGM.</h1>
             <p class="text-xl md:text-2xl leading-relaxed mb-8">
-                Berbasis di Sleman, Yogyakarta. Saya fokus pada analisis dan pengembangan ekonomi wilayah, dengan minat mendalam pada [minat spesifik Anda, misal: data science untuk pembangunan, kebijakan publik, dll.].
+                Tinggal di Sleman, Yogyakarta. Saya fokus pada analisis dan pengembangan ekonomi wilayah, dengan minat mendalam pada [minat spesifik Anda, misal: data science untuk pembangunan, kebijakan publik, dll.].
             </p>
             <div class="flex flex-wrap justify-center items-center gap-8 mb-10 text-xl md:text-3xl font-semibold">
                 <div>2 Tahun <span class="block text-base font-normal">Pengalaman</span></div>
@@ -95,21 +95,33 @@
             <p class="text-orange-500 text-lg mb-2">✦ Services</p>
             <h2 class="text-4xl font-bold mb-12">What We Offer</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-                    <div class="text-5xl text-orange-500 mb-4">💡</div> <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">We Craft Seamless, Simple, Engaging, User-Friendly UI/UX Design for Conversions</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-                    <div class="text-5xl text-orange-500 mb-4">💻</div>
-                    <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Emphasizes the functional aspect of web design to facilitate user experience and profit business outcomes.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-                    <div class="text-5xl text-orange-500 mb-4">🎨</div>
-                    <h3 class="text-xl font-semibold mb-2">Branding</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">All-in-One Branding in one place. Our Branding that elevate your Business.</p>
-                </div>
-            </div>
+    <div class="
+        p-6 rounded-lg shadow-lg flex flex-col items-center text-center
+        service-card relative overflow-hidden
+    ">
+        <div class="text-5xl text-orange-500 mb-4 z-10">💡</div>
+        <h3 class="text-xl font-semibold mb-2 z-10">UI/UX Design</h3>
+        <p class="text-gray-300 text-sm leading-relaxed z-10">We Craft Seamless, Simple, Engaging, User-Friendly UI/UX Design for Conversions</p>
+    </div>
+
+    <div class="
+        p-6 rounded-lg shadow-lg flex flex-col items-center text-center
+        service-card relative overflow-hidden
+    ">
+        <div class="text-5xl text-orange-500 mb-4 z-10">💻</div>
+        <h3 class="text-xl font-semibold mb-2 z-10">Web Development</h3>
+        <p class="text-gray-300 text-sm leading-relaxed z-10">Emphasizes the functional aspect of web design to facilitate user experience and profit business outcomes.</p>
+    </div>
+
+    <div class="
+        p-6 rounded-lg shadow-lg flex flex-col items-center text-center
+        service-card relative overflow-hidden
+    ">
+        <div class="text-5xl text-orange-500 mb-4 z-10">🎨</div>
+        <h3 class="text-xl font-semibold mb-2 z-10">Branding</h3>
+        <p class="text-gray-300 text-sm leading-relaxed z-10">All-in-One Branding in one place. Our Branding that elevate your Business.</p>
+    </div>
+</div>
         </div>
     </section>
 
@@ -224,8 +236,8 @@
     const lastModified = {};
     function checkForChanges() {
         const filesToCheck = [
-            '{{ url_for('static', filename='style.css') }}',
-            '{{ url_for('static', filename='script.js') }}',
+            "{{ url_for('static', filename='style.css') }}",
+            "{{ url_for('static', filename='script.js') }}",
             // Tambahkan file lain yang sering Anda edit di sini
         ];
 

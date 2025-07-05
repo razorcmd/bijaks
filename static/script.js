@@ -51,3 +51,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 }); // Akhir dari DOMContentLoaded
+// static/script.js
+
+// ... (Kode FAQ Toggle dan Mobile Menu tetap sama) ...
+
+// === Script untuk Gradient Efek Hover "Riak Air" ===
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+    // Saat kursor masuk ke dalam kotak
+    card.addEventListener('mouseenter', (e) => {
+        const rect = card.getBoundingClientRect();
+        // Pastikan perhitungan ini akurat
+        const x = e.clientX - rect.left; // Posisi X relatif terhadap elemen
+        const y = e.clientY - rect.top;  // Posisi Y relatif terhadap elemen
+
+        // Mengatur variabel CSS kustom pada elemen kartu
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+    });
+
+    // Event mouseleave ini tidak secara eksplisit mengubah style,
+    // karena transisi di CSS akan menangani kembalinya ke kondisi non-hover.
+    // Jika Anda ingin efek keluar yang berbeda, baru tambahkan logika di sini.
+    // card.addEventListener('mouseleave', () => { /* optional */ });
+});

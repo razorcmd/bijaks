@@ -38,3 +38,44 @@ h1, h2, h3 {
     max-height: 500px; /* Nilai yang cukup besar agar tidak terpotong */
     opacity: 1;
 }
+/* static/style.css */
+
+.service-card {
+    background-color: #1a202c; /* Biarkan ini sebagai warna dasar gelap kartu */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 1; /* Z-index untuk kartu itu sendiri */
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    /* Ubah gradient agar lebih terlihat dan menyebar lebih luas */
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                                rgba(249, 115, 22, 0.6) 0%, /* Warna orange, lebih padat (0.6) */
+                                rgba(249, 115, 22, 0.3) 30%, /* Sedikit lebih transparan di 30% penyebaran */
+                                rgba(249, 115, 22, 0) 60%); /* Transparan penuh di 60% penyebaran */
+    
+    width: 400%; /* Jadikan lebih besar agar menyebar lebih jauh */
+    height: 400%; /* Jadikan lebih besar */
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center; /* TAMBAHKAN INI */
+
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Ubah durasi kembali ke 1s atau sesuaikan */
+    z-index: 0; /* Pastikan ini 0, agar di atas background kartu tapi di bawah konten */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    /* HAPUS BARIS INI KARENA TIDAK PERLU LAGI DAN TIDAK BEKERJA: */
+    /* background-color: transparent !important; */
+}
+
+.service-card:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
