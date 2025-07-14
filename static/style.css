@@ -79,3 +79,6 @@ h1, h2, h3 {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+.bg-gray-black {
+    background-color: #1a202c !important; /* Menggunakan !important untuk memaksa override */
+}

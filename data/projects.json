@@ -2,7 +2,7 @@
     {
         "id": "project-1",
         "image": "IMG_0680.JPG",
-        "tags": ["Mam", "Ayam Bakar"],
+        "tags": ["mam", "Ayam Bakar"],
         "title": "AyamFavorit. | Kenangan Dia",
         "description": "Dulu dia bilang kalo makanan favoritnya sih prasojo, tapi ganti itu pas itu, apa ya namanya lupa. Ayam Bakar Manukan?",
         "link": "#"
@@ -13,6 +13,14 @@
         "tags": ["Mam", "Gejayan"],
         "title": "RC RC RC!",
         "description": "Tim Rocket Chicken Broow!.",
+        "link": "#"
+    },
+    {
+        "id": "project-3",
+        "image": "IMG_9929.JPG",
+        "tags": ["KUPI", "UGM"],
+        "title": "Zoomia!",
+        "description": "Hari dimana coba beli kopi sembari nyantai di FKT.",
         "link": "#"
     }
 ]

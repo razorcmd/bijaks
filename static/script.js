@@ -7,11 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = button.nextElementSibling; // Konten FAQ
             const icon = button.querySelector('.faq-icon'); // Icon + atau -
 
-            // Toggle class 'hidden' untuk menyembunyikan/menampilkan konten
-            content.classList.toggle('hidden');
-
             // Mengubah icon + menjadi - atau sebaliknya
-            if (content.classList.contains('hidden')) {
+            if (content.classList.contains('open')) {
                 icon.textContent = '+';
                 // Jika disembunyikan, hapus class 'open' untuk transisi
                 content.classList.remove('open');
