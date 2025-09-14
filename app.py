@@ -33,5 +33,10 @@ def home():
     return render_template('index.html', 
                            projects_data=projects_data, 
                            hero_bg_url=hero_bg_url)
+
+@app.route('/expenses')
+def expenses_app():
+    return render_template('expenses/index.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) # debug=True akan mengaktifkan auto-reload
