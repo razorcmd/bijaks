@@ -1,75 +1,67 @@
-// Pastikan DOM sudah sepenuhnya dimuat sebelum menjalankan script
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Menu Toggle ---
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.md\\:hidden.nav-links');
 
-    // --- JavaScript untuk FAQ Accordion ---
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const content = button.nextElementSibling; // Konten FAQ
-            const icon = button.querySelector('.faq-icon'); // Icon + atau -
-
-            // Mengubah icon + menjadi - atau sebaliknya
-            if (content.classList.contains('open')) {
-                icon.textContent = '+';
-                // Jika disembunyikan, hapus class 'open' untuk transisi
-                content.classList.remove('open');
-            } else {
-                icon.textContent = '-';
-                // Jika ditampilkan, tambahkan class 'open' untuk transisi
-                content.classList.add('open');
-            }
-            // Optional: Toggle 'active' class pada tombol untuk styling icon (misal: rotate)
-            button.classList.toggle('active');
-        });
-    });
-
-
-    // --- JavaScript untuk Mobile Navigation Toggle (Hamburger Menu) ---
-    const mobileMenuButton = document.querySelector('.mobile-menu-button'); // Tombol hamburger
-    const navLinks = document.querySelector('.nav-links'); // Container link navigasi
-
-    if (mobileMenuButton && navLinks) {
+    if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('hidden'); // Menambah/menghapus class 'hidden'
-            navLinks.classList.toggle('flex'); // Menambah/menghapus class 'flex' untuk display
-            // Anda bisa tambahkan class untuk transisi seperti 'transition-all duration-300 ease-in-out' ke nav-links di HTML
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex'); // Tailwind class to display as flex container
         });
     }
 
-    // --- Contoh JavaScript lain (opsional, bisa Anda tambahkan) ---
-    // Smooth scrolling untuk navigasi internal (jika diklik link #id)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    // --- FAQ Accordion ---
+    const faqToggles = document.querySelectorAll('.faq-toggle');
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            const isOpen = content.classList.contains('open');
+
+            // Optional: Close all other open FAQs
+            document.querySelectorAll('.faq-content.open').forEach(openContent => {
+                if (openContent !== content) {
+                    openContent.classList.remove('open');
+                    openContent.previousElementSibling.classList.remove('active');
+                }
             });
+
+            // Toggle the clicked FAQ
+            toggle.classList.toggle('active', !isOpen);
+            content.classList.toggle('open', !isOpen);
         });
     });
 
-}); // Akhir dari DOMContentLoaded
-// static/script.js
-
-// ... (Kode FAQ Toggle dan Mobile Menu tetap sama) ...
-
-// === Script untuk Gradient Efek Hover "Riak Air" ===
-const serviceCards = document.querySelectorAll('.service-card');
-
-serviceCards.forEach(card => {
-    // Saat kursor masuk ke dalam kotak
-    card.addEventListener('mouseenter', (e) => {
-        const rect = card.getBoundingClientRect();
-        // Pastikan perhitungan ini akurat
-        const x = e.clientX - rect.left; // Posisi X relatif terhadap elemen
-        const y = e.clientY - rect.top;  // Posisi Y relatif terhadap elemen
-
-        // Mengatur variabel CSS kustom pada elemen kartu
-        card.style.setProperty('--x', `${x}px`);
-        card.style.setProperty('--y', `${y}px`);
+    // --- Service Card Hover Effect ---
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            // Set CSS custom properties for the radial gradient position
+            card.style.setProperty('--x', `${x}px`);
+            card.style.setProperty('--y', `${y}px`);
+        });
     });
 
-    // Event mouseleave ini tidak secara eksplisit mengubah style,
-    // karena transisi di CSS akan menangani kembalinya ke kondisi non-hover.
-    // Jika Anda ingin efek keluar yang berbeda, baru tambahkan logika di sini.
-    // card.addEventListener('mouseleave', () => { /* optional */ });
+    // --- Smooth Scrolling for Nav Links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu on click
+                if (mobileMenu && mobileMenu.classList.contains('flex')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }
+
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
