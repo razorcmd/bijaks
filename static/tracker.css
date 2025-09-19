@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --bg-color: #111827; /* Dark Gray from portfolio */
+    --card-bg: #1F2937; /* Lighter Gray */
+    --primary-color: #22c55e; /* Green for positive actions */
+    --secondary-color: #ef4444; /* Red for negative actions */
+    --text-color: #d1d5db; /* Light gray text */
+    --text-light: #9ca3af;
+    --border-color: #374151;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #16a34a;
+}
+
+main {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.tracker-card, .history-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.tracker-card h2, .history-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.tracker-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.tracker-card p span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.btn-add, .btn-reset {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-add {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #16a34a;
+}
+
+#add-smoke-btn {
+    background-color: var(--secondary-color);
+}
+
+#add-smoke-btn:hover {
+    background-color: #dc2626;
+}
+
+.btn-reset {
+    background-color: #4b5563;
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.btn-reset:hover {
+    background-color: #6b7280;
+}
+
+#exercise-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#exercise-form input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#exercise-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#exercise-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#exercise-list li {
+    background-color: var(--bg-color);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-exercise-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.delete-exercise-btn:hover {
+    color: var(--secondary-color);
+}
+
+#history-log {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.history-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item strong {
+    color: white;
+}

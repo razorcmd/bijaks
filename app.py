@@ -1,15 +1,8 @@
-from flask import Flask, render_template, send_from_directory, url_for # Tambahkan url_for di sini
+from flask import Flask, render_template, send_from_directory, url_for
 import json # Import pustaka json
 import os # Import pustaka os untuk path file
 
 app = Flask(__name__)
-
-# --- Perbaikan send_from_directory (direkomendasikan) ---
-# Fungsi ini untuk melayani file statis secara eksplisit.
-# Flask biasanya sudah bisa melakukannya, tapi ini lebih robust.
-@app.route('/static/<path:filename>')
-def static_files(filename):
-    return send_from_directory(os.path.join(app.root_path, 'static'), filename) # Menggunakan os.path.join dan app.root_path
 
 @app.route('/')
 def home():
@@ -37,6 +30,10 @@ def home():
 @app.route('/expenses')
 def expenses_app():
     return render_template('expenses/index.html')
+
+@app.route('/tracker')
+def tracker_app():
+    return render_template('tracker.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) # debug=True akan mengaktifkan auto-reload

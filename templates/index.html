@@ -254,42 +254,5 @@
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <script>
-    // Skrip sederhana untuk live reload (khusus pengembangan)
-    // Periksa perubahan file setiap beberapa detik
-    const lastModified = {};
-    function checkForChanges() {
-        const filesToCheck = [
-            "{{ url_for('static', filename='style.css') }}",
-            "{{ url_for('static', filename='script.js') }}",
-            // Tambahkan file lain yang sering Anda edit di sini
-        ];
-
-        let changesDetected = false;
-        let checksCompleted = 0;
-
-        filesToCheck.forEach(url => {
-            fetch(url, { method: 'HEAD' })
-                .then(response => {
-                    const newModified = response.headers.get('Last-Modified') || response.headers.get('ETag');
-                    if (lastModified[url] && lastModified[url] !== newModified) {
-                        changesDetected = true;
-                    }
-                    lastModified[url] = newModified;
-                })
-                .catch(error => console.error('Error checking for file changes:', error))
-                .finally(() => {
-                    checksCompleted++;
-                    if (checksCompleted === filesToCheck.length && changesDetected) {
-                        console.log('Changes detected! Reloading page...');
-                        location.reload();
-                    }
-                });
-        });
-    }
-
-    // Jalankan pengecekan setiap 1-2 detik
-    setInterval(checkForChanges, 1500); // Cek setiap 1.5 detik
-</script>
 </body>
 </html>

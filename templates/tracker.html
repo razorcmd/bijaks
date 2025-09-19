@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cigarette & Exercise Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tracker.css') }}"> <!-- Pastikan hanya ada satu baris ini -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quit Smoking Journey</h1>
+            <p>Satu langkah setiap hari menuju hidup yang lebih sehat.</p>
+            <a href="{{ url_for('home') }}" class="back-link">&larr; Kembali ke Portofolio</a>
+        </header>
+
+        <main>
+            <div class="tracker-card">
+                <h2>🚬 Cigarette Tracker</h2>
+                <p>Hari ini: <span id="today-smokes">0</span> batang</p>
+                <button id="add-smoke-btn" class="btn-add">+1 Rokok</button>
+                <button id="reset-smokes-btn" class="btn-reset">Reset Hari Ini</button>
+            </div>
+
+            <div class="tracker-card">
+                <h2>🏃‍♂️ Exercise Tracker</h2>
+                <form id="exercise-form">
+                    <input type="text" id="exercise-input" placeholder="Contoh: Lari 30 menit" required>
+                    <button type="submit" class="btn-add">Tambah Aktivitas</button>
+                </form>
+                <h3>Aktivitas Hari Ini:</h3>
+                <ul id="exercise-list">
+                    <!-- Aktivitas akan muncul di sini -->
+                </ul>
+            </div>
+
+            <div class="history-card">
+                <h2>📜 Riwayat Harian</h2>
+                <div id="history-log">
+                    <!-- Riwayat akan muncul di sini -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='tracker.js') }}"></script> <!-- Pastikan hanya ada satu baris ini -->
+</body>
+</html>
